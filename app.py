@@ -6,7 +6,7 @@ import io
 def add_text_to_image(image, text):
     # Load a font
     font_size = 70                   # Desired font size
-    center_position = (1550, 458)         # (x, y) position for the text
+    center_position = (1550, 450)         # (x, y) position for the text
     text_color = (229, 51, 97)   
     try:
         font = ImageFont.truetype("Dancing_Script/DancingScript-VariableFont_wght.ttf", font_size)  # You can replace with any font file
