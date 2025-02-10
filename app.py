@@ -39,7 +39,7 @@ def main():
     
         # Open the image with Pillow
     with Image.open(input_image) as image:
-        st.image(image, caption="Ảnh đã upload Image", use_column_width=True)
+        st.image(image, caption="Ảnh đã upload Image", use_container_width=True)
         
         # Get text input from the user
         text = st.text_input("Điền chữ vào thiệp:")
