@@ -39,17 +39,15 @@ def main():
     
         # Open the image with Pillow
     with Image.open(input_image) as image:
-        st.image(image, caption="Ảnh đã upload Image", use_container_width=True)
-        
         # Get text input from the user
-        text = st.text_input("Điền chữ vào thiệp:")
+        text = st.text_input("Điền chữ vào thiệp:", value="", key="text_input")
         
         if text:
             # Add the text to the image
             image_with_text = add_text_to_image(image.copy(), text)
             
             # Display the image with text
-            st.image(image_with_text, caption="Ảnh sau khi ghép chữ: ", use_column_width=True)
+            st.image(image_with_text, caption="Ảnh sau khi ghép chữ: ", use_container_width=True)
             
             # Allow user to download the image with text
             buffer = io.BytesIO()
@@ -59,7 +57,7 @@ def main():
             st.download_button(
                 label="Tải ảnh về",
                 data=buffer,
-                file_name="image_with_text.png",
+                file_name=f"{text}.png",
                 mime="image/png"
             )
 
